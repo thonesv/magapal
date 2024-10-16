@@ -1,0 +1,936 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+  }
+  
+  a {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #F2F2F2;
+}
+
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+    background: #212121;
+    font-size: 14px;
+    transition: all 0.5s;
+    color: #fff;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+  }
+  
+  #topbar .version-info a {
+    font-style: normal;
+    color: #fff;
+    padding: 10px;
+  }
+
+  #topbar .version-info .active {
+  background-color: #3e3e3e;
+  }
+
+  #topbar .version-info i a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  #topbar .social-links .text {
+    font-size: .75rem;
+    color: rgba(255, 255, 255, 0.7);
+    user-select: none;
+  }
+  
+  #topbar .social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 0;
+    transition: 0.3s;
+  }
+
+  #topbar .social-links a i {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  
+  #topbar .social-links a:hover {
+    color: white;
+  }
+  
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  height: 75px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+#header .logo img {
+  max-height: 60px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar>ul>li {
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222222;
+  white-space: nowrap;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar>ul>li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: #DD5100;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover:before,
+.navbar li:hover>a:before,
+.navbar .active:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #DD5100;
+}
+
+
+/**
+* Mobile Navigation 
+*/
+
+.mobile-nav-toggle {
+  color: #212121;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.bi-x::before {
+  font-size: 40px;
+}
+
+
+.navbar img{
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+  .navbar img{
+    display: block;
+    max-height: 100px;
+    margin-bottom: 30px;
+
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f2f2f2;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(2rem);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding: 100px 0 100px 0;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile ul li{
+width: 100%;
+padding: 0;
+}
+
+
+.navbar-mobile img{
+  display: block;
+  padding-bottom: 30px;
+}
+
+.navbar-mobile a, .navbar-mobile a:focus {
+  display: block;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #212121;
+  text-align: center;
+  margin: auto;
+}
+
+.navbar-mobile a:hover:before, .navbar-mobile li:hover > a:before, .navbar-mobile .active:before {
+  visibility: hidden;
+}
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #212121;
+  background-color: #fff;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/banners/Magapal-magasin-palettes.hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+#hero .container .blur{
+padding: 2.5rem 2.5rem 2.5rem 10rem;
+background: rgba(0, 0, 0, 0.18);
+border: 1px solid #ffffff56;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+}
+
+#hero h1 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero h2 {
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  font-size: 2.75rem;
+  font-weight: 500;
+}
+
+#hero h2 span{
+  color: #DD5100;
+}
+
+#hero h3 {
+  color: #ffffff;
+  margin: 0 0 40px 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#hero .btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 10px 28px;
+  display: inline-block;
+  border:1px solid;
+  transition: 0.5s;
+  color: #fff;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+#hero .btn:hover {
+  background: #DD5100;
+  color: #ffffff;
+  border:1px solid #DD5100;
+  transition: 0.5s;
+}
+
+
+@media (max-width: 768px) {
+  #hero {
+    height: 90vh;
+      background: url("../img/banners/Magapal-magasin-palettes.hero..tel.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  #hero .container .blur{
+    padding: 20px;
+    }
+
+  #hero h1 {
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  #hero h2, #hero h2 span {
+    font-size: 2rem;
+    text-align: center;
+
+  }
+
+  #hero h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #hero .btn {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Concept Section
+--------------------------------------------------------------*/
+
+.concept{
+  padding: 5rem 0;
+}
+.concept h2 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.concept h3 {
+  font-size: 2rem;
+  padding-bottom: 3rem;
+}
+
+.concept h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.vid-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.vid-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.concept .product-cards {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+
+.concept .accordion-list ul{
+  padding: 0;
+  list-style: none;
+}
+.concept .accordion-list li{
+  margin-top: 15px;
+}
+.concept .accordion-list li{
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+.concept .accordion-list a{
+  display: block;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-right: 30px;
+  cursor: pointer;
+  color: #DD5100;
+  text-transform: uppercase;
+}
+.concept .accordion-list i{
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.concept .accordion-list p{
+  padding: 20px 0 0 0;
+  font-size: 15px;
+}
+.concept .accordion-list .icon-show{
+  display: none;
+}
+.concept .accordion-list a.collapsed{
+  color: #212121;
+}
+.concept .accordion-list a.collapsed:hover{
+  color: #DD5100;
+  font-weight: 600;
+}
+.concept .accordion-list a.collapsed .icon-show{
+  display: inline-block;
+}
+.concept .accordion-list a.collapsed .icon-close{
+  display: none;
+}
+
+.concept .accordion-list li .list-point{
+padding: 0;
+}
+
+@media (max-width: 1024px) {
+.concept .content, .concept .accordion-list{
+  padding-left: 0;
+  padding-right: 0;
+}
+}
+@media (max-width: 768px) {
+
+  .concept h2 {
+    font-size: 0.9rem;
+  }
+
+  .concept h3 {
+    font-size: 1.5rem;
+  }
+
+  .concept h4 {
+    font-size: 1rem;
+  }
+
+  .concept .accordion-list a {
+    font-size: 1rem;
+  }
+
+}
+
+
+/*--------------------------------------------------------------
+# Applications Section
+--------------------------------------------------------------*/
+  .applications{
+      padding: 5rem 0;
+  }
+
+  .applications h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  
+  .applications h3 {
+    font-size: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .applications h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .applications .card-bg1 {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  padding: 0;
+  }
+  
+  .applications .card-bg2 {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  padding: 0;
+  }
+  
+  .applications .card-bg3 {
+  border-top: 1px solid;
+  border-right: 1px solid;
+  padding: 0;
+  }
+
+  .applications .card-bg4 {
+  border-top: 1px solid;
+  border-left: 1px solid;
+  padding: 0;
+  }
+  
+  .applications .cards {
+  margin:20px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  }
+  
+  .applications .img {
+  position: relative;
+  padding: 0;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  }
+  
+  .applications .img-top {
+  display: none;
+  position: absolute;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  }
+  
+  @media (max-width: 768px) {
+  
+  .applications h2 {
+    font-size: 0.9rem;
+  }
+  .applications h3 {
+    font-size: 1.5rem;
+  }
+
+  .applications .card-bg1 {
+    border-bottom: none;
+    border-right: none;
+    }
+    
+    .applications .card-bg2 {
+    border-bottom: none;
+    border-left: none;
+    }
+    
+    .applications .card-bg3 {
+    border-top: none;
+    border-right: none;
+    }
+  
+    .applications .card-bg4 {
+    border-top: none;
+    border-left: none;
+    }
+
+    .applications h4 {
+      font-size: 1rem;
+  } 
+}
+  
+/*--------------------------------------------------------------
+# Enjeux Section
+--------------------------------------------------------------*/
+
+.enjeux{
+background-color: #222222;
+padding: 0;
+}
+
+.enjeux h4 {
+  font-size: 2rem;
+color: #f2f2f2;
+text-transform: uppercase;
+margin-bottom: 40px;
+}
+.enjeux h4 span{
+color: #DD5100;
+}
+
+.container-text{
+padding: 5rem 5rem;
+}
+
+.enjeux .btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 10px 28px;
+  display: inline-block;
+  border:1px solid;
+  transition: 0.5s;
+  color: #fff;
+  width: 70%;
+}
+
+.enjeux .btn:hover {
+  background: #DD5100;
+  color: #ffffff;
+  border:1px solid #DD5100;
+  transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+
+  .container-text{
+    padding: 2rem;
+    }
+  
+  .enjeux h4{
+  font-size: 1.5rem;
+  padding:1rem;
+  }
+
+  .enjeux .btn {
+    font-size: 0.9rem;
+    margin:1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Realisations Section
+--------------------------------------------------------------*/
+.realisations{
+  padding: 5rem 0;
+}
+  
+  .realisations h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  
+  .realisations h3 {
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
+    font-weight: 500;
+  }
+  
+  .realisations h3 a {
+  text-decoration: underline;
+  color: #444444;
+  font-weight: 700;
+  }
+  
+  .item{
+  padding: 10px;
+  }
+  
+  .item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+  
+  .item img:hover {
+    transform: scale(1.02);
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+  }
+
+  /*--------------------------------------------------------------
+# Marceau
+--------------------------------------------------------------*/
+  .marceau {
+  background: url("../img/banners/image-ambiance.png") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 5rem 0;
+
+  }
+
+  .marceau .banner-logo {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  }
+  .marceau h3{
+  font-size: 22px;
+  font-weight: 300;
+  color: #DBB5A5;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  }
+  
+  .marceau h4{
+  color: #ffffff;
+  margin: 30px 0 30px 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  }
+  
+  .marceau .btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px;
+    border:1px solid;
+    color: #ffffff;
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.5s;
+  }
+  
+  .marceau .btn:hover {
+    background: #DD5100;
+    color: #ffffff;
+    border:1px solid #DD5100;
+    transition: 0.5s;
+  }
+  
+  @media (min-width: 1200px) {
+  .marceau {
+    background-attachment: fixed;
+  }
+  }
+  
+  @media (max-width: 768px) {
+  .marceau {
+    padding: 30px 0 ;
+  }
+  
+  .marceau h3 {
+    font-size: 1rem;
+  }
+  
+  .marceau h4 {
+    font-size: 1rem;
+  }
+  
+  .marceau .btn {
+    font-size: 0.9rem;
+  }
+  
+  .marceau .banner-logo {
+    max-width: 60%;
+    }
+  }
+  
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients {
+  text-align: center;
+padding: 5rem 0;
+  }
+
+  .clients h2 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+  }
+  
+  .clients img {
+  max-width: 35%;
+  display: inline-block;
+  padding: 30px 0;
+  }
+  
+  @media (max-width: 768px) {
+  .clients img {
+    max-width: 75%;
+  }
+  
+  .clients h2 {
+    font-size: 1rem;
+  }
+
+  }
+  
+
+  /*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact{
+padding: 5rem 0;
+}
+
+.contact h2 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.contact h3 {
+  font-size: 1.5rem;
+  padding-bottom: 3rem;
+  font-weight: 500;
+}
+
+.contact .btn a{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border:1px solid;
+  color: #000000;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.contact .btn a:hover {
+  background: #DD5100;
+  color: #ffffff;
+  border:1px solid #DD5100;
+  transition: 0.5s;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .container-bouton {
+    flex-direction: column;
+  }
+
+  .contact .btn a{
+    font-size: 0.9rem;
+  }
+  }
+
+  
+  
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  .footer {
+  background: #212121;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  
+  .footer .logo img{
+  display: block;
+  max-height: 70px;
+  text-align: center;
+  align-items: center;
+  }
+  
+  .footer .navbar a{
+  color: #ffffff;
+  }
+  
+  .footer .BottomBar .BottomBar-link{
+  font-size: 14px;
+  color: #505050;
+  cursor: pointer;
+  margin-left: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .container-bouton {
+      flex-direction: column;
+    }
+    
+    .clients h2 {
+      font-size: 1rem;
+    }
+
+    .footer .logo img{
+      margin-bottom: 2rem;
+      }
+  
+    }
