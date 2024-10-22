@@ -328,6 +328,8 @@ backdrop-filter: blur(10px);
 
 #hero h2 span{
   color: #DD5100;
+    -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: white;
 }
 
 #hero h3 {
@@ -636,6 +638,8 @@ margin-bottom: 40px;
 }
 .enjeux h4 span{
 color: #DD5100;
+        -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: white;
 }
 
 .container-text{
