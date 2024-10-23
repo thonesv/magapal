@@ -328,8 +328,6 @@ backdrop-filter: blur(10px);
 
 #hero h2 span{
   color: #DD5100;
-    -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: white;
 }
 
 #hero h3 {
@@ -569,6 +567,13 @@ padding: 0;
   
   .applications .cards {
   margin:20px;
+  padding:20px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  }
+
+  .applications .cards:hover {
+  background-color: #F2F2F2;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   }
@@ -638,8 +643,6 @@ margin-bottom: 40px;
 }
 .enjeux h4 span{
 color: #DD5100;
-        -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: white;
 }
 
 .container-text{
